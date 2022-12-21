@@ -9,8 +9,6 @@ Simple app to check type and status your internet connection with local notifica
  - connectivity_plus
  - data_connection_checker
 
-A new Flutter project.
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
