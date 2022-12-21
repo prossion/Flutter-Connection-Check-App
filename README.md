@@ -1,6 +1,13 @@
-# flutter_reminder_app
+# Flutter Connection Checker App
 
-A new Flutter project.
+Simple app to check type and status your internet connection with local notifications
+
+![ezgif-4-ccf8f3c97a](https://user-images.githubusercontent.com/67923348/208911345-504e28f9-412a-4fc9-8351-ca2227710485.gif)
+
+### In this project I have used:
+ - flutter_local_notifications
+ - connectivity_plus
+ - data_connection_checker
 
 ## Getting Started
 
