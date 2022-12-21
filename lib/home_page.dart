@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:data_connection_checker_tv/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_reminder_app/local_notification_service.dart';
@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
   ConnectivityResult _connectionStatus = ConnectivityResult.none;
   DataConnectionStatus _addressCheckResult = DataConnectionStatus.disconnected;
   final Connectivity _connectivity = Connectivity();
@@ -80,6 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
       _connectionStatus = result;
       statusCheck();
     });
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    var appInBackground = (state == AppLifecycleState.inactive);
+    if (appInBackground) statusCheck();
   }
 
   @override
